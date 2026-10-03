@@ -56,3 +56,20 @@
 - `npm run typecheck` PASS, `npm test` PASS (2 tests), `npm run build` PASS, Vercel build PASS.
 - Phase 6-8 belum selesai. Video preview/export, cloud R2 upload, full route split, E2E/browser QA, dan final release docs masih tersisa.
 - Tidak mengklaim storage aktif: R2 account/bucket/credentials belum dapat dibuat tanpa akses Cloudflare account.
+
+#### [User Completion Requirements]
+- User needs Cloudflare account + R2 bucket/access credentials, one cloud AI API key, and final product decisions for auth/privacy/export limits.
+- No passwords, API keys, tokens, or payment data should be sent in chat; use provider dashboards or secure env entry.
+- Security event: an R2 token was exposed in chat. It was not used or stored. Token must be revoked and replaced before storage setup continues.
+- Remaining work is Phase 5 integration, Phase 6 media/export, Phase 7 QA/hardening, Phase 8 release.
+- Clarification: Vercel environment secrets do not have a separate fee; provider usage/billing may still apply for R2, AI API, and Vercel limits.
+- User reports Cloudflare and Groq credentials created. Credentials are not yet verified as configured in Vercel; do not send values through chat.
+- User opened Vercel Add Environment Variable modal; instructed to add separate Secret variables for R2 and Groq under Production, Preview, and Development as needed.
+- User screenshot confirms all five Production secrets are present: `GROQ_API_KEY`, `R2_BUCKET_NAME`, `R2_SECRET_ACCESS_KEY`, `R2_ACCESS_KEY_ID`, `R2_ACCOUNT_ID`.
+- Next step: redeploy production, then verify R2/Groq integration without exposing secret values.
+- User asked for redeploy instructions; guided through Vercel Dashboard Deployments menu.
+- Agent redeployed production via authenticated Vercel CLI. Deployment `dpl_JDqbdWoNiqM9YXSpxprQq9Dk3t3n` is READY at `https://luna-editor-six.vercel.app`.
+- Verified secret presence by names only: Groq plus four R2 Production secrets are present and hidden.
+- Live `POST /api/analyze` verification PASS: HTTP 200 and SSE sequence 5/50/75/100.
+- User confirmed continuing Phase 5-8. Deployment secrets remain hidden; values will not be read. Previously exposed R2 token must remain revoked.
+- Phase 5-8 implementation resumed: add real R2 presigned upload, Groq transcription boundary, media preview/export baseline, QA checks, and release documentation.
