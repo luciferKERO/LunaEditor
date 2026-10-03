@@ -4,10 +4,10 @@
 Bangun Luna AI Video Editor sebagai aplikasi web/PWA modern yang di-deploy ke Vercel, ringan di perangkat client (bebas beban komputasi lokal berat), terintegrasi dengan cloud AI provider, dan diorkestrasi oleh 6 divisi NEXUS Agency Agents.
 
 ## Next Step
-Eksekusi Phase 5: Pipeline Integration & Event Synchronization.
+Implement real render architecture from reconciled contracts. Vercel remains orchestration; large-video render needs separate worker/runtime.
 
 ## Current Phase
-Phase 5: Pipeline Integration & Event Synchronization
+Phase 6: Video Processing & Export Architecture — contract reconciliation complete; real render pending
 
 ---
 
@@ -89,20 +89,22 @@ Phase 5: Pipeline Integration & Event Synchronization
 - **Status:** complete
 
 ### Phase 5: Pipeline Integration & Event Synchronization
+- [x] Contract reconciliation against PRD (`Project`, `EditDecision`, `AIEditEvent`, render/output state)
 - [x] Baseline analysis -> EditDecision -> IndexedDB project state
 - [x] SSE event stream -> Luna HUD + activity log
 - [x] Decision events persist to IndexedDB
 - [ ] Cloud AI provider and R2 upload integration
-- [ ] Auto-save / load / duplicate UX completion
+- [x] Auto-save / load UX completion (duplicate belum diperlukan)
 - **Agents:** Senior Developer, Frontend Developer, Backend Architect, AI Engineer
 - **Status:** in_progress
 
 ### Phase 6: Video Processing & Export Architecture
-- [ ] Implementasi pipeline preview video & audio ducking di browser
+- [x] Browser preview proof-of-concept (cut skip + BGM preview; does not satisfy PRD render requirement)
+- [ ] Implement real edit application and render graph from canonical EditDecision
 - [ ] Implementasi client/serverless export workflow (16:9 Landscape & 9:16 Vertical)
-- [ ] Output page (Player, metadata, direct download)
+- [x] Output page (Player, metadata, edit decisions)
 - **Agents:** Video Editing Systems Architect, Backend Architect, Frontend Developer
-- **Status:** pending
+- **Status:** in_progress
 
 ### Phase 7: QA, Vercel Performance & Hardening
 - [ ] End-to-end test di live Vercel environment
