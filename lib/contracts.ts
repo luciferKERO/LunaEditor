@@ -3,7 +3,7 @@ export type EditStyle = (typeof styles)[number];
 export type HudState = 'IDLE' | 'ANALYZING' | 'THINKING' | 'SELECTING' | 'EDITING' | 'WARNING' | 'SUCCESS' | 'RENDERING';
 export type TrackKind = 'video' | 'voice' | 'discord' | 'music';
 
-export type Asset = { id: string; name: string; kind: 'video' | 'audio'; durationMs: number; sizeBytes: number };
+export type Asset = { id: string; name: string; kind: 'video' | 'audio'; durationMs: number; sizeBytes: number; file?: Blob };
 export type EditDecision = { id: string; assetId: string; sourceStartMs: number; sourceEndMs: number; timelineStartMs: number; timelineEndMs: number; action: 'keep' | 'cut' | 'emphasize'; reason: string; confidence: number };
 export type TimelineClip = EditDecision & { track: TrackKind };
 export type Project = { id: string; name: string; createdAt: string; updatedAt: string; style: EditStyle; assets: Asset[]; decisions: EditDecision[]; clips: TimelineClip[] };

@@ -1,21 +1,18 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { buildTimeline } from '@/lib/edit-engine';
+import { EditStyle, Project } from '@/lib/contracts';
+import { getProject, saveProject } from '@/lib/storage';
+
+const styles: Record<EditStyle, string> = { meme: 'Meme', calm: 'Calm', competitive: 'Competitive', 'youtube-long': 'YouTube Long' };
+function projectId() { return new URLSearchParams(location.search).get('project'); }
 
 export default function Workspace() {
-  const [message, setMessage] = useState('Pilih footage untuk upload private ke R2.');
-  const [preview, setPreview] = useState('');
-  async function upload(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0]; if (!file) return;
-    setPreview(URL.createObjectURL(file)); setMessage('Membuat upload URL aman…');
-    const projectId = crypto.randomUUID();
-    try {
-      const response = await fetch('/api/upload-url', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ projectId, filename: file.name, contentType: file.type }) });
-      const data = await response.json();
-      if (!response.ok) return setMessage(data.error?.message ?? 'Storage gagal. Preview lokal tetap siap.');
-      const uploaded = await fetch(data.uploadUrl, { method: 'PUT', headers: { 'Content-Type': file.type }, body: file });
-      setMessage(uploaded.ok ? 'Upload R2 selesai. Preview siap.' : 'Upload R2 gagal. Cek CORS bucket; preview lokal tetap siap.');
-    } catch { setMessage('Upload R2 terblokir browser. Cek CORS bucket; preview lokal tetap siap.'); }
-  }
-  return <main className="shell"><header className="topbar"><a className="brand" href="/">LUNA // WORKSPACE</a><a className="secondary" href="/output">OUTPUT</a></header><section className="panel"><h1>Workspace</h1><p className="muted">Private upload · local preview · browser-first.</p><label className="primary" htmlFor="footage">IMPORT RAW FOOTAGE</label><input id="footage" accept="video/*,.mp4,.mov,.webm,.mkv" type="file" hidden onChange={upload} /><p className="muted" aria-live="polite">{message}</p>{preview && <video controls preload="metadata" src={preview} style={{ width: '100%', maxHeight: 480, background: '#000' }} />}</section></main>;
+  const [project, setProject] = useState<Project | null>(null); const [preview, setPreview] = useState(''); const [message, setMessage] = useState('Pilih raw footage untuk mulai.'); const [progress, setProgress] = useState(0); const [busy, setBusy] = useState(false);
+  useEffect(() => { const id = projectId(); if (!id) { location.href = '/'; return; } getProject(id).then((item) => { if (!item) return location.href = '/'; setProject(item); if (item.assets[0]?.file) setPreview(URL.createObjectURL(item.assets[0].file)); }).catch(() => location.href = '/'); }, []);
+  async function importFootage(event: ChangeEvent<HTMLInputElement>) { const file = event.target.files?.[0]; if (!file || !project || !file.type.startsWith('video/')) return setMessage('Pilih file video valid.'); const next = { ...project, assets: [{ id: `${project.id}:primary-video`, name: file.name, kind: 'video' as const, durationMs: 0, sizeBytes: file.size, file }], decisions: [], clips: [], updatedAt: new Date().toISOString() }; setProject(next); setPreview(URL.createObjectURL(file)); await saveProject(next); setProgress(0); setMessage(`FOOTAGE READY // ${file.name}`); }
+  async function analyze() { if (!project?.assets.length) return setMessage('IMPORT FOOTAGE DULU'); setBusy(true); setProgress(5); try { const response = await fetch('/api/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ projectId: project.id, style: project.style }) }); if (!response.ok || !response.body) throw new Error(); const reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = ''; let latest = project; while (true) { const chunk = await reader.read(); buffer += decoder.decode(chunk.value ?? new Uint8Array(), { stream: !chunk.done }); const lines = buffer.split('\n'); buffer = lines.pop() ?? ''; for (const line of lines) if (line.startsWith('data: ')) { const event = JSON.parse(line.slice(6)); setProgress(event.progress); setMessage(`${event.state} // ${event.message}`); if (event.data?.decisions) { latest = { ...latest, decisions: event.data.decisions, clips: buildTimeline(event.data.decisions, latest.style), updatedAt: new Date().toISOString() }; setProject(latest); await saveProject(latest); } } if (chunk.done) break; } setMessage(`EDIT READY // ${latest.clips.length} clip dibuat`); } catch { setMessage('ANALYSIS ERROR // coba lagi'); } finally { setBusy(false); } }
+  if (!project) return <main className="shell"><div className="empty">Loading workspace…</div></main>;
+  return <main className="shell"><header className="topbar"><a className="brand" href="/">LUNA // WORKSPACE</a><a className="secondary" href={`/output?project=${project.id}`}>OUTPUT</a></header><section className="panel"><h1>{project.name}</h1><p className="muted">Style: {styles[project.style]} · Import, analysis, review.</p><div className="actions"><label className="primary" htmlFor="footage">IMPORT RAW FOOTAGE</label><input id="footage" accept="video/*,.mp4,.mov,.webm,.mkv" type="file" hidden onChange={importFootage} /><button className="secondary" disabled={busy || !project.assets.length} onClick={analyze}>{busy ? 'ANALYZING…' : 'RUN ANALYSIS'}</button>{project.clips.length ? <a className="secondary" href={`/output?project=${project.id}`}>OPEN OUTPUT</a> : null}</div></section>{preview ? <section className="panel"><h2>SOURCE PREVIEW · {project.assets[0].name}</h2><video controls preload="metadata" src={preview} style={{ width: '100%', maxHeight: 480, background: '#000' }} /></section> : null}<section className="grid"><article className="panel"><h2>LUNA HUD · {progress}%</h2><div className="empty">{message}</div></article><article className="panel"><h2>EDIT TIMELINE</h2><div className="timeline"><div className="track" data-label="VIDEO">{project.clips.map((clip) => <span className="clip" key={clip.id} title={clip.reason} />)}</div><div className="track" data-label="AUDIO" /><div className="track" data-label="MUSIC" /></div></article><article className="panel"><h2>AI DECISIONS</h2>{project.decisions.length ? project.decisions.map((decision) => <div className="edit-result" key={decision.id}><strong>{decision.action.toUpperCase()}</strong><span>{decision.reason}</span></div>) : <p className="muted">Run analysis to create edit clips.</p>}</article></section></main>;
 }
