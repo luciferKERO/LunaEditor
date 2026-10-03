@@ -73,3 +73,9 @@
 - Live `POST /api/analyze` verification PASS: HTTP 200 and SSE sequence 5/50/75/100.
 - User confirmed continuing Phase 5-8. Deployment secrets remain hidden; values will not be read. Previously exposed R2 token must remain revoked.
 - Phase 5-8 implementation resumed: add real R2 presigned upload, Groq transcription boundary, media preview/export baseline, QA checks, and release documentation.
+- R2 integration PASS: production `/api/upload-url` returned HTTP 200 with a private R2 PUT URL valid 900 seconds. URL value was not retained.
+- Added `/workspace` private video upload + local preview, `/output` empty-state route, `/api/transcribe` Groq Whisper boundary, CORS deployment guide, and security tests.
+- Verification PASS: `npm test` 4/4, `npm run typecheck`, local build, Vercel production build. Deployment `dpl_7HthEPXP4iSwnDiGdfSzsGLhoyuf` READY; commit `7c44ecf` pushed.
+- Remaining blockers: R2 browser upload needs user-set R2 CORS policy; real Groq transcription needs an audio fixture; final export requires dedicated render worker for reliable large-video output. Phase 6-8 remain in_progress/pending.
+- User confirms previously exposed R2 token was revoked. Security risk from that token is closed; replacement Production secrets remain configured and hidden.
+- User reports raw footage import is not working. Current UI only exposes upload at `/workspace` via `PILIH VIDEO`; root page has no import control. R2 browser upload also still depends on bucket CORS. Website is deployed baseline, not finished editor.

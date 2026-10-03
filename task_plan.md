@@ -75,7 +75,8 @@ Phase 5: Pipeline Integration & Event Synchronization
 - [x] Implementasi Web Audio API client-side untuk acoustic Crest Factor
 - [x] Implementasi SSE Vercel API route untuk analysis event stream
 - [x] Implementasi EDL baseline untuk 4 style
-- [ ] Hubungkan cloud transcription dan moment scoring provider
+- [x] Hubungkan cloud transcription provider boundary (Groq Whisper route)
+- [ ] Hubungkan moment scoring provider dengan footage nyata
 - **Agents:** AI Engineer, Video Editing Systems Architect, Backend Architect
 - **Status:** in_progress
 
