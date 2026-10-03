@@ -78,4 +78,7 @@
 - Verification PASS: `npm test` 4/4, `npm run typecheck`, local build, Vercel production build. Deployment `dpl_7HthEPXP4iSwnDiGdfSzsGLhoyuf` READY; commit `7c44ecf` pushed.
 - Remaining blockers: R2 browser upload needs user-set R2 CORS policy; real Groq transcription needs an audio fixture; final export requires dedicated render worker for reliable large-video output. Phase 6-8 remain in_progress/pending.
 - User confirms previously exposed R2 token was revoked. Security risk from that token is closed; replacement Production secrets remain configured and hidden.
-- User reports raw footage import is not working. Current UI only exposes upload at `/workspace` via `PILIH VIDEO`; root page has no import control. R2 browser upload also still depends on bucket CORS. Website is deployed baseline, not finished editor.
+- User reports raw footage import is not working. Current UI only exposes upload at `/workspace` via `PILIH VIDEO`; root page has no import control. R2 browser upload also still depends on bucket CORS.
+- Completion pass: added root-page `IMPORT RAW FOOTAGE`, local video preview, IndexedDB project save/load, analysis trigger, timeline baseline, and output project state. Workspace now keeps local preview even when R2/CORS fails and shows actionable error.
+- Verification PASS: `npm test` 4/4, `npm run typecheck`, `npm run build`; commit `6f770c8` deployed READY, then CORS-safe fix commit `2d65e54` deployed READY at `https://luna-editor-six.vercel.app`.
+- Remaining external blocker: R2 bucket CORS must be configured in Cloudflare dashboard. Remaining product limitation: final MP4 render/export cannot run reliably inside Vercel serverless for large raw footage; needs a render worker/provider. Website is deployed baseline, not finished editor.
