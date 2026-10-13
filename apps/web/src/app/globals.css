@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* NovaCut Studio Design System — from DESIGN.md tokens */
+:root {
+  /* Surface tiers */
+  --surface: #10131a;
+  --surface-dim: #10131a;
+  --surface-bright: #363941;
+  --surface-container-lowest: #0b0e15;
+  --surface-container-low: #191c23;
+  --surface-container: #1d2027;
+  --surface-container-high: #272a31;
+  --surface-container-highest: #32353c;
+
+  /* On-surface */
+  --on-surface: #e0e2ec;
+  --on-surface-variant: #cbc3d7;
+
+  /* Primary */
+  --primary: #d0bcff;
+  --on-primary: #3c0091;
+  --primary-container: #a078ff;
+  --on-primary-container: #340080;
+  --primary-accent: #8b5cf6;
+  --primary-hover: #7c3aed;
+
+  /* Secondary */
+  --secondary: #c0c1ff;
+  --on-secondary: #1000a9;
+  --secondary-container: #3131c0;
+  --on-secondary-container: #b0b2ff;
+
+  /* Tertiary */
+  --tertiary: #4cd7f6;
+  --on-tertiary: #003640;
+  --tertiary-container: #009eb9;
+  --on-tertiary-container: #002f38;
+
+  /* Error */
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  /* Outline */
+  --outline: #958ea0;
+  --outline-variant: #494454;
+
+  /* Inverse */
+  --inverse-surface: #e0e2ec;
+  --inverse-on-surface: #2d3038;
+  --inverse-primary: #6d3bd7;
+
+  /* Track colors */
+  --track-video: #6366f1;
+  --track-audio: #06b6d4;
+  --track-sfx: #10b981;
+  --track-caption: #f59e0b;
+  --track-overlay: #ec4899;
+
+  /* System feedback */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Text hierarchy */
+  --text-high: #e6e8ef;
+  --text-medium: #969baa;
+  --text-dim: #64697a;
+
+  /* Hairlines */
+  --hairline: #343844;
+  --background: #10131a;
+  --on-background: #e0e2ec;
+}
+
+@theme inline {
+  /* Colors */
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-mid: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-primary: var(--primary-accent);
+  --color-primary-soft: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-hairline: var(--hairline);
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-track-video: var(--track-video);
+  --color-track-audio: var(--track-audio);
+  --color-track-sfx: var(--track-sfx);
+  --color-track-caption: var(--track-caption);
+  --color-track-overlay: var(--track-overlay);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-text-high: var(--text-high);
+  --color-text-medium: var(--text-medium);
+  --color-text-dim: var(--text-dim);
+
+  /* Fonts */
+  --font-sans: 'Inter', var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* Base reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar — thin, dark */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--hairline); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--outline); }
+
+/* Tabular figures for timecodes */
+.font-tabular { font-variant-numeric: tabular-nums; }
