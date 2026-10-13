@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#32353c","surface-container-low":"#191c23","outline-variant":"#494454","error-container":"#93000a","on-tertiary-fixed-variant":"#004e5c","on-error":"#690005","inverse-surface":"#e0e2ec","surface":"#10131a","inverse-primary":"#6d3bd7","primary-fixed":"#e9ddff","surface-container":"#1d2027","tertiary":"#4cd7f6","on-secondary-container":"#b0b2ff","surface-container-lowest":"#0b0e15","on-tertiary-container":"#002f38","tertiary-fixed":"#acedff","error":"#ffb4ab","on-tertiary":"#003640","surface-container-highest":"#32353c","surface-dim":"#10131a","primary":"#d0bcff","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#5516be","primary-container":"#a078ff","on-surface-variant":"#cbc3d7","on-primary-fixed":"#23005c","surface-container-high":"#272a31","background":"#10131a","surface-bright":"#363941","tertiary-container":"#009eb9","surface-tint":"#d0bcff","on-primary":"#3c0091","on-tertiary-fixed":"#001f26","on-secondary":"#1000a9","outline":"#958ea0","tertiary-fixed-dim":"#4cd7f6","secondary-container":"#3131c0","on-background":"#e0e2ec","inverse-on-surface":"#2d3038","on-surface":"#e0e2ec","on-primary-container":"#340080","on-secondary-fixed-variant":"#2f2ebe","secondary":"#c0c1ff","on-error-container":"#ffdad6","secondary-fixed":"#e1e0ff","primary-fixed-dim":"#d0bcff","secondary-fixed-dim":"#c0c1ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.125rem","margin":"0.75rem","gutter":"0.5rem","space-sm":"0.25rem","space-md":"0.5rem","space-xl":"1rem","space-lg":"0.75rem"},"fontFamily":{"headline-xl":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"code-mono":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"]},"fontSize":{"headline-xl":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"headline-lg":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"600"}],"code-mono":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.04em","fontWeight":"500"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-12 bottom-0 w-16 bg-surface-container-lowest border-r border-surface-variant z-40 flex flex-col items-center justify-between py-space-md"><div class="flex flex-col items-center gap-space-sm w-full px-space-xs"><button class="w-10 h-10 rounded flex items-center justify-center bg-surface-container text-primary hover:bg-surface-container-high transition-colors" title="Media Pool & Clips" type="button"><span class="material-symbols-outlined text-[20px]">video_library</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="AutoCut AI Directives" type="button"><span class="material-symbols-outlined text-[20px]">auto_awesome</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Effects & Transitions" type="button"><span class="material-symbols-outlined text-[20px]">auto_fix_high</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Audio & Stem Mixer" type="button"><span class="material-symbols-outlined text-[20px]">graphic_eq</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Text & Subtitles" type="button"><span class="material-symbols-outlined text-[20px]">subtitles</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Color Grading (LUTs)" type="button"><span class="material-symbols-outlined text-[20px]">palette</span></button></div><div class="flex flex-col items-center gap-space-sm w-full px-space-xs"><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Workstation Layouts" type="button"><span class="material-symbols-outlined text-[20px]">dashboard_customize</span></button><button class="w-10 h-10 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Keyboard Shortcuts" type="button"><span class="material-symbols-outlined text-[20px]">keyboard</span></button></div></aside><div class="pl-16"><header class="fixed top-0 left-0 right-0 h-12 bg-surface-container-lowest/95 backdrop-blur-md border-b border-surface-variant z-50 flex items-center justify-between px-margin gap-space-lg"><div class="flex items-center gap-space-lg min-w-0 flex-shrink-0"><div class="flex items-center gap-space-md"><img alt="NovaCut Studio Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X3KEDGL38eoEEUngGqdCfZHE_hd13DLSPSGb6OEhKVnQaQcsRwau_gwkwvkE-ssTeO-L5hm6IxHKGRJ0EXha3UBINe4Vd72XklPEqpdhxiqh4eFQV3fnBBgd4nN2hGVq2KyTVZrV6p5oYFZIohO5kzLxh-hDYktEzmlaHm6UDs8zOxhi3fp0g3zyTUMAtrTdbukmvs4z4yJ_EuXfj5llSkhKOcslgepTSvA2U5XPstvKIny4Z_d7hjMDBd"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface hidden sm:inline-block">NovaCut Studio</span></div><div class="h-4 w-px bg-surface-variant hidden md:block"></div><div class="hidden lg:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg border border-surface-variant max-w-[280px]"><span class="material-symbols-outlined text-primary text-[16px]">movie_edit</span><span class="font-label-sm text-label-sm text-on-surface truncate">Apex Legends - Season 20 Montage (AutoCut AI)</span><span class="material-symbols-outlined text-outline text-[14px]">expand_more</span></div><div class="hidden xl:flex items-center gap-space-xs text-outline font-body-sm text-body-sm"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>Autosaved 2m ago</span></div></div><nav class="flex items-center h-full gap-space-xs" data-active-classes="bg-surface-container-high text-primary border-b-2 border-primary font-headline-md"><a class="h-full flex items-center px-space-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" data-path="home" href="#">Home</a><a aria-current="page" class="h-full flex items-center px-space-lg transition-colors bg-surface-container-high text-primary border-b-2 border-primary font-headline-md" data-path="workspace" href="#">Workspace</a><a class="h-full flex items-center px-space-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" data-path="output-and-export" href="#">Output & Export</a><a class="h-full flex items-center px-space-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" data-path="assets" href="#">Assets</a><a class="h-full flex items-center px-space-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" data-path="settings" href="#">Settings</a></nav><div class="flex items-center gap-space-md flex-shrink-0"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded bg-surface-container-low border border-surface-variant"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-code-mono text-code-mono text-on-surface-variant">NovaAI v3.2 Active · GPU 82%</span></div><div class="flex items-center gap-space-xs"><button class="p-space-xs text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Undo (Cmd+Z)" type="button"><span class="material-symbols-outlined text-[18px]">undo</span></button><button class="p-space-xs text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Redo (Cmd+Shift+Z)" type="button"><span class="material-symbols-outlined text-[18px]">redo</span></button></div><div class="h-4 w-px bg-surface-variant"></div><div class="flex items-center gap-space-xs"><button class="p-space-xs text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Project Settings" type="button"><span class="material-symbols-outlined text-[18px]">tune</span></button><button class="p-space-xs text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Help & Documentation" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button></div><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcCwlp0DZev7xWQ6_XsPWqqCvnwLxMUSIYyq7guNMABqzwo0u6ulcP-eCN7rGtcVi3KQqzoaFLvprmN5ap92diUJaifE1-pXRKpdFIbpnbIh2wJKTcfum_LsRSGn5-kFhUidcE-r8u8-SiyauIb8uMCu_5Ytqu2kmtAKEecDU_IqTMNhLTZm8CQauLDc4hPA30jT3rTU_lfEwLF0Nv76G8ovela2HA64k_NXJv-gOU37x39W3T5FN1Cw"/></div></div></header><main class="relative pt-12 min-h-screen bg-surface"><div class="flex flex-col w-full h-[calc(100vh-3rem)] overflow-hidden bg-background text-on-surface font-body-md select-none">
+<!-- TOP WORKSPACE SUB-HEADER / PRECISION TOOLBAR -->
+<header class="h-10 bg-surface-container-low px-margin flex items-center justify-between gap-gutter flex-shrink-0 z-20 shadow-sm">
+<!-- Left Project Meta & Edit Tools -->
+<div class="flex items-center gap-space-lg min-w-0">
+<div class="flex items-center gap-space-sm min-w-0 pr-space-md">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0">movie</span>
+<span class="font-headline-md text-headline-md text-on-surface truncate tracking-tight">Apex_HighTier_Ranked_Stream_VOD_04.mp4</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-code-mono text-body-sm flex-shrink-0">4K 60fps · 01:42:15 raw → 02:45 cut</span>
+</div>
+<!-- Quick Action Tools Palette -->
+<div class="hidden md:flex items-center bg-surface-container p-0.5 rounded gap-0.5">
+<button class="w-7 h-7 rounded flex items-center justify-center bg-primary-container text-on-primary-container shadow-sm" title="Selection Tool (V)" type="button">
+<span class="material-symbols-outlined text-[15px]">near_me</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Razor Cut (C)" type="button">
+<span class="material-symbols-outlined text-[15px]">content_cut</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Slip / Slide (Y)" type="button">
+<span class="material-symbols-outlined text-[15px]">swap_horiz</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-primary hover:bg-primary-container/20 transition-colors relative" id="aiSnipBtn" title="AI Smart Snip (A)" type="button">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+<span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Marker (M)" type="button">
+<span class="material-symbols-outlined text-[15px]">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Center Scrub & Timecode Stats -->
+<div class="hidden lg:flex items-center gap-space-lg">
+<div class="flex items-center gap-space-md font-code-mono text-body-sm bg-surface-container-lowest px-space-md py-1 rounded">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-outline uppercase text-[9px] tracking-wider font-semibold">IN:</span>
+<span>00:04:12:08</span>
+</div>
+<span class="text-surface-variant">|</span>
+<div class="flex items-center gap-1 text-primary font-semibold">
+<span class="text-tertiary uppercase text-[9px] tracking-wider font-semibold">NOW:</span>
+<span class="px-1 py-0.2 rounded bg-primary/10">00:01:24:18</span>
+</div>
+<span class="text-surface-variant">|</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-outline uppercase text-[9px] tracking-wider font-semibold">DUR:</span>
+<span>00:02:45:00</span>
+</div>
+</div>
+<!-- Playback Speed & Dynamic Render Cache Line -->
+<div class="flex items-center gap-space-sm">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-mono text-[10px]">1.0x REC</span>
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden" title="Render Cache Status: 100% Solid Green">
+<div class="w-full h-full bg-tertiary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Right Global Workspace Settings & Export -->
+<div class="flex items-center gap-space-md flex-shrink-0">
+<div class="hidden xl:flex items-center gap-space-xs">
+<button class="h-7 px-space-sm rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-bright transition-colors" title="Snap to Grid Active" type="button">
+<span class="material-symbols-outlined text-primary text-[14px]">grid_4x4</span>
+<span>Snap</span>
+</button>
+<button class="h-7 px-space-sm rounded bg-primary-container/20 text-primary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="AI Auto-Ripple Enabled" type="button">
+<span class="material-symbols-outlined text-[14px]">motion_photos_on</span>
+<span>Auto-Ripple</span>
+</button>
+</div>
+<!-- Mini Stereo Visualizer -->
+<div class="hidden sm:flex items-center gap-0.5 h-6 px-1.5 rounded bg-surface-container-lowest" title="Master Level: -12.4 dBFS">
+<div class="w-1 h-3.5 bg-tertiary rounded-sm"></div>
+<div class="w-1 h-4.5 bg-tertiary rounded-sm"></div>
+<div class="w-1 h-2.5 bg-tertiary rounded-sm"></div>
+<div class="w-1 h-5 bg-primary rounded-sm"></div>
+<div class="w-1 h-3 bg-tertiary rounded-sm"></div>
+<span class="font-code-mono text-[9px] text-outline ml-1">-12dB</span>
+</div>
+<!-- Export CTA -->
+<button class="h-7 px-space-lg rounded bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]">rocket_launch</span>
+<span>Export Video</span>
+</button>
+</div>
+</header>
+<!-- MIDDLE WORKSPACE SECTION: MEDIA BIN | PROGRAM MONITOR | AI INSPECTOR -->
+<div class="flex flex-1 min-h-0 w-full overflow-hidden">
+<!-- LEFT PANEL: MEDIA POOL & AI ASSETS (W: ~260px) -->
+<aside class="w-64 bg-surface-container-low flex flex-col flex-shrink-0 z-10">
+<!-- Media Tabs -->
+<div class="flex items-center bg-surface-container-lowest px-1 pt-1 gap-1 flex-shrink-0">
+<button class="flex-1 py-1.5 px-2 rounded-t text-center font-label-sm text-label-sm bg-surface-container-low text-primary font-semibold" type="button">Pool</button>
+<button class="flex-1 py-1.5 px-2 rounded-t text-center font-label-sm text-label-sm text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">SFX/Audio</button>
+<button class="flex-1 py-1.5 px-2 rounded-t text-center font-label-sm text-label-sm text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">Captions</button>
+<button class="flex-1 py-1.5 px-2 rounded-t text-center font-label-sm text-label-sm text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">Presets</button>
+</div>
+<!-- Filter / Search Section -->
+<div class="p-space-sm space-y-space-xs flex-shrink-0 bg-surface-container-low">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1.5 text-outline text-[14px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder-outline pl-7 pr-2 py-1 rounded text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Filter clips, AI tags, audio..." type="text"/>
+</div>
+<div class="flex items-center gap-1 overflow-x-auto py-0.5 no-scrollbar">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-[10px] cursor-pointer whitespace-nowrap">All (18)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px] hover:bg-surface-container-high cursor-pointer whitespace-nowrap">AI Highlights (7)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px] hover:bg-surface-container-high cursor-pointer whitespace-nowrap">Audio (4)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px] hover:bg-surface-container-high cursor-pointer whitespace-nowrap">Overlays (3)</span>
+</div>
+</div>
+<!-- Scrollable Media Bin Clip Cards -->
+<div class="flex-1 overflow-y-auto px-space-sm space-y-1 py-1">
+<!-- Clip 1 (Selected AI Highlight) -->
+<div class="p-2 rounded bg-surface-container-high shadow-sm relative group cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l"></div>
+<div class="flex items-start gap-2">
+<div class="w-12 h-9 rounded bg-surface-container-highest overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Cyberpunk high adrenaline action game highlight thumbnail with electric violet neon laser trails, explosive muzzle flashes, and dynamic kill banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcuDfO_HqEkEOhdU3VZY4oft9RfSunSBnXKsFVZQtzlhHkDgYcEXchUZHH_LZYdG-Mm26FE1_S7GC7dc_PNG7qbHAyrW4fhtGXlS2Qg7p9QQRZWATTuB90a4CPxhCbR6axkCxFHlC7J1p4CIJfCPx_H-xbhMzLKp0uTDKCHS9iL466G_Vunu4HZbQJwTxQE0R-Envj48JEIjOmtHRqjxrdduqrdbJs6l6fRmCuOSC09ByCxLe1wr5m7A"/>
+<span class="absolute bottom-0 right-0 px-0.5 bg-surface-container-lowest/80 text-[8px] font-code-mono text-tertiary">00:24</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Match_Winning_Clutch_4K.mp4</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 rounded bg-primary/20 text-primary text-[9px] font-code-mono font-medium">Double Kill · 94%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-1.5 overflow-hidden">
+<div class="w-3/4 h-full bg-tertiary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Clip 2 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-start gap-2">
+<div class="w-12 h-9 rounded bg-surface-container-highest overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Cinematic skydiving dropship viewpoint descending onto a neon futuristic battlefield city with volcanic orange skies and team trackers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdfXUNSOGwcJtCpyMFiEldLd2dXn9grcw1dHIur93JV98NvhmYugKHzCdi0D30TpbAYp34rnVpu7p_Sb-rw4HVVCla9BuI_zwCexrD-nJlreBygNFIpVib-vlAYDRAbFeIysEXcrYbjMYgDBdzwmCPECrv6L05D-SCtGxPYMWB-TzQOSFd7Z019GvbfgdWtIGgjDuqmFLaLUOy36AFBdqHo3ByHgo55tSau92eUO4UQAS7fHHHJBqaAQ"/>
+<span class="absolute bottom-0 right-0 px-0.5 bg-surface-container-lowest/80 text-[8px] font-code-mono text-on-surface-variant">00:42</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">DropShip_HotDrop_Fight.mp4</p>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-container-highest text-secondary text-[9px] font-code-mono">Action detected</span>
+</div>
+</div>
+</div>
+<!-- Clip 3 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer opacity-80">
+<div class="flex items-start gap-2">
+<div class="w-12 h-9 rounded bg-surface-container-highest overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Quiet loot cavern interior in high tech canyon with ambient cyan luminescent crystals and weapon attachments on metallic racks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo4KqEOkNTZvNWN6CsYAJSfdahK5m-YAEewRkZe89yiEW-tFgYZzT7NdqmzFrzR-58Vpu7FywAz72yqvvRQUKvqJtIHbQCoz-KQn0AJKjJ_jgFsrf7toPyWRGzxxUqGMVg_UJDQqoHVC4J201XvogrR6BkWtg4yoAnTOeEFdhzYqRePILs8K5v_IO22HfGCCpAUPFkeEn9b-UVVakH3Ou4x0nQpddMu3K_2ogz2iBLjSqA7icjodnR_w"/>
+<span class="absolute bottom-0 right-0 px-0.5 bg-surface-container-lowest/80 text-[8px] font-code-mono text-outline">00:12</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">MidGame_Rotation_Silence.mp4</p>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-variant text-outline text-[9px] font-code-mono">Dead air trimmed 85%</span>
+</div>
+</div>
+</div>
+<!-- Clip 4 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-start gap-2">
+<div class="w-12 h-9 rounded bg-surface-container-highest overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Close up first person sniper optic reticle locked onto enemy armored target with purple electric plasma bullet trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJD2ECc2Vy7t74VF7ZqtZBPqLVyMgkGMDMpqzsRVUJ5SFyfzCj9BUJp618DNo3V9m05zSyz6z6XxEVXvOM-jQJP0_GxIy8fZwX3293cAoPFzTdu7uTYQakQYlm2ErLNvV2d4559zrXI-LASOg3l6LmS846JN4y0Uj1BFGlRZY3J_Z_X1q3iGyI5hT2g21TAXkVhPfX9pmiizFd7TrESQ4q7Iriu6TA1wIo_HgAIQ9fOyjesbvCTmSWQQ"/>
+<span class="absolute bottom-0 right-0 px-0.5 bg-surface-container-lowest/80 text-[8px] font-code-mono text-tertiary">00:31</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Final_Squad_Wipe_Sniper.mp4</p>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-tertiary-container/30 text-tertiary text-[9px] font-code-mono">Headshot 360 · High energy</span>
+</div>
+</div>
+</div>
+<!-- Audio Stems Group -->
+<div class="pt-1.5 pb-0.5 px-1 flex items-center justify-between text-outline font-label-sm text-[10px] uppercase tracking-wider">
+<span>AI Audio & SFX Assets</span>
+<span class="material-symbols-outlined text-[13px]">graphic_eq</span>
+</div>
+<div class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between text-body-sm cursor-pointer">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-tertiary text-[16px]">music_note</span>
+<span class="truncate text-on-surface text-body-sm">Cyber_Bass_Drift_140BPM.wav</span>
+</div>
+<span class="font-code-mono text-[9px] text-tertiary px-1 rounded bg-tertiary/10 flex-shrink-0">Beat-synced</span>
+</div>
+<div class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between text-body-sm cursor-pointer">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-secondary text-[16px]">volume_up</span>
+<span class="truncate text-on-surface-variant text-body-sm">Hitmarker_SubDrop.wav</span>
+</div>
+<span class="font-code-mono text-[9px] text-outline flex-shrink-0">00:02</span>
+</div>
+<div class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between text-body-sm cursor-pointer">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-secondary text-[16px]">volume_up</span>
+<span class="truncate text-on-surface-variant text-body-sm">Victory_Orchestra_Stinger.wav</span>
+</div>
+<span class="font-code-mono text-[9px] text-outline flex-shrink-0">00:04</span>
+</div>
+</div>
+<!-- Bottom Ingest / Storage Drawer -->
+<div class="p-space-sm bg-surface-container-lowest flex-shrink-0">
+<div class="p-2 rounded bg-surface-container-low text-center hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">cloud_upload</span>
+<span>Drop media or raw VOD</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[9px] font-code-mono text-outline">
+<span>Cache: 42.8 GB / 100 GB</span>
+<span class="text-tertiary">42%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-1 overflow-hidden">
+<div class="w-[42%] h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER PANEL: PROGRAM VIEWPORT & SCRUBBER CANVAS (FLEXIBLE) -->
+<main class="flex-1 bg-background flex flex-col min-w-0 z-0">
+<!-- Video Viewport Upper Stage -->
+<div class="flex-1 relative flex items-center justify-center p-space-md min-h-0 bg-surface-container-lowest overflow-hidden">
+<!-- 16:9 Program Monitor Frame -->
+<div class="relative w-full max-w-4xl aspect-video bg-black rounded shadow-2xl overflow-hidden flex items-center justify-center">
+<!-- Gameplay Screen Preview Image -->
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High intensity first-person shooter competitive clutch moment with cyber glowing UI reticle, motion blurred neon energy shield explosions, holographic damage numbers, and apex champion banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJHeGHygl0N2S--q7pPf4BmoYl1tuZzKBf0okW_ayfG8v_1XmCJMb6mD0pd14i_3mxrDWOhGcFGAMEudkE_WRt4LK9TVj6SRn8BTZtJLh_p7yqpllhyMXYZe-uHyUvish1MSukpAZGu87Uow2kL2JThoLu1eJiWHUeTFt8ilOP_oiCGkDvx3ojgWNJTzUCrR-D5W7IyEGlUpa5BDfpy8jdYmp6iBEFMF2LWw4y4fQ0J6Oeg5qGSo6BnA"/>
+<!-- Viewport Cinematic Overlays & AI Indicators -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
+<!-- Top Viewport Floating Badges -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur text-tertiary text-[10px] font-code-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                1080p60 Proxy Active
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur text-on-surface-variant text-[10px] font-label-sm">
+                16:9 Landscape • Auto-9:16 Ready
+              </span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur text-outline hover:text-on-surface text-[10px] font-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px]">crop_free</span>
+                Safe Zones
+              </button>
+</div>
+</div>
+<!-- Center Gaming Victory Graphic Event Overlay -->
+<div class="absolute top-1/4 flex flex-col items-center text-center pointer-events-none">
+<div class="px-4 py-1 rounded bg-error-container/90 text-on-error-container shadow-lg backdrop-blur flex items-center gap-2 transform -skew-x-12 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span class="font-headline-md tracking-wider font-extrabold uppercase">KILL LEADER ELIMINATED • +500 RP</span>
+</div>
+</div>
+<!-- Futuristic Crosshair Reticle Centerpiece -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<svg class="w-16 h-16 text-tertiary/70 animate-spin" style="animation-duration: 20s;" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="30" stroke="currentColor" stroke-dasharray="4 8" stroke-width="1.5"></circle>
+<line stroke="currentColor" stroke-width="2" x1="50" x2="50" y1="12" y2="28"></line>
+<line stroke="currentColor" stroke-width="2" x1="50" x2="50" y1="72" y2="88"></line>
+<line stroke="currentColor" stroke-width="2" x1="12" x2="28" y1="50" y2="50"></line>
+<line stroke="currentColor" stroke-width="2" x1="72" x2="88" y1="50" y2="50"></line>
+</svg>
+</div>
+<!-- Creator Kinetic Subtitle Preview Overlay -->
+<div class="absolute bottom-7 px-6 py-1.5 text-center pointer-events-none max-w-xl">
+<span class="font-headline-xl text-headline-xl text-white font-extrabold tracking-wide uppercase drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]" style="-webkit-text-stroke: 1.5px #000;">
+              WAIT DID YOU SEE THAT <span class="text-tertiary drop-shadow-[0_0_12px_rgba(76,215,246,0.8)]">CLUTCH SHOT?!</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Transport Controls Bar Directly Under Viewport -->
+<div class="h-11 bg-surface-container-low px-margin flex items-center justify-between gap-space-md flex-shrink-0 shadow-inner">
+<!-- Left Stepper Controls -->
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Previous Cut (J)" type="button">
+<span class="material-symbols-outlined text-[16px]">skip_previous</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Step 1 Frame Back" type="button">
+<span class="material-symbols-outlined text-[16px]">fast_rewind</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-on-primary shadow-md hover:bg-primary-container transition-all active:scale-95" id="playPauseBtn" title="Play / Pause (Space)" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Step 1 Frame Forward" type="button">
+<span class="material-symbols-outlined text-[16px]">fast_forward</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Next Cut (L)" type="button">
+<span class="material-symbols-outlined text-[16px]">skip_next</span>
+</button>
+</div>
+<!-- Center Dynamic Mini Scrubber with Highlight Markers -->
+<div class="flex-1 max-w-xl mx-2 flex items-center gap-2">
+<span class="font-code-mono text-[10px] text-primary">01:24:18</span>
+<div class="flex-1 relative h-2 bg-surface-container-highest rounded-full cursor-pointer flex items-center group">
+<!-- Cached timeline fill -->
+<div class="absolute left-0 top-0 bottom-0 w-[51%] bg-primary/40 rounded-full"></div>
+<!-- Playhead position marker -->
+<div class="absolute left-[51%] top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary shadow ring-2 ring-primary/40 group-hover:scale-125 transition-transform"></div>
+<!-- AI Highlight ticks along scrubber -->
+<div class="absolute left-[12%] top-0 bottom-0 w-0.5 bg-tertiary" title="AI Cut: Hot Drop"></div>
+<div class="absolute left-[28%] top-0 bottom-0 w-0.5 bg-secondary" title="AI Marker: Headshot"></div>
+<div class="absolute left-[51%] top-0 bottom-0 w-1 bg-primary" title="AI Event: Sniper Clutch (Active)"></div>
+<div class="absolute left-[78%] top-0 bottom-0 w-0.5 bg-tertiary" title="AI Event: Squad Wipe"></div>
+</div>
+<span class="font-code-mono text-[10px] text-outline">02:45:00</span>
+</div>
+<!-- Right Transport Utilities -->
+<div class="flex items-center gap-2">
+<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="Loop Playback" type="button">
+<span class="material-symbols-outlined text-[16px]">repeat</span>
+</button>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+<div class="w-14 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+<span class="font-code-mono text-[9px]">85%</span>
+</div>
+<div class="h-3 w-px bg-surface-variant"></div>
+<button class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-mono text-[10px] hover:text-on-surface" type="button">Full ↓</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Fullscreen Viewport" type="button">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+</button>
+</div>
+</div>
+</main>
+<!-- RIGHT PANEL: AI PIPELINE & INSPECTOR (W: ~340px) -->
+<aside class="w-80 bg-surface-container-low flex flex-col flex-shrink-0 z-10">
+<!-- Segmented Header Switcher -->
+<div class="h-9 bg-surface-container-lowest px-2 flex items-center gap-1 flex-shrink-0">
+<button class="flex-1 h-7 rounded font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+<span>AI Pipeline</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary/20 text-primary text-[9px] font-bold">9/9</span>
+</button>
+<button class="flex-1 h-7 rounded font-label-sm text-label-sm text-outline hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+<span>Inspector</span>
+</button>
+</div>
+<!-- AI Status Overview Card -->
+<div class="p-space-sm bg-surface-container flex-shrink-0 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">AI Assembly</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-[10px] font-bold">100% Ready</span>
+</div>
+<!-- Segmented Multicolor Pipeline Progress -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full mt-2 flex overflow-hidden">
+<div class="w-1/4 h-full bg-primary" title="Footage Ingestion"></div>
+<div class="w-1/4 h-full bg-tertiary" title="Silence Trimming"></div>
+<div class="w-1/4 h-full bg-secondary" title="Highlight Detection"></div>
+<div class="w-1/4 h-full bg-primary-container" title="Audio Sync & Subtitles"></div>
+</div>
+<div class="mt-1.5 flex items-center justify-between text-[10px] text-outline font-code-mono">
+<span>Processed 102 mins in 4m 12s</span>
+<span class="text-tertiary font-medium">97.8 FPS avg</span>
+</div>
+</div>
+<!-- Chronological AI Decision Feed (Interactive Log) -->
+<div class="flex-1 overflow-y-auto p-space-sm space-y-2">
+<p class="font-label-sm text-[10px] text-outline uppercase tracking-wider px-1">AI Edit Audit Log</p>
+<!-- Log Item 1 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Step 01 • 00:00:04
+            </span>
+<span class="text-outline">Ingest</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Audio De-noising & LUFS Normalization</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Dialogue separated from game sound effects; clamped to -14 LUFS broadcast profile.</p>
+</div>
+<!-- Log Item 2 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Step 02 • 00:00:38
+            </span>
+<span class="text-primary font-bold">-84 mins cut</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Silence & Boring Rotation Removal</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Excised 84 mins of lobby wait time, loading screens, and non-combat map traversal.</p>
+</div>
+<!-- Log Item 3 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Step 03 • 00:01:15
+            </span>
+<span class="text-outline">Vision AI</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Hype Moment & Kill Detection</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">12 key events scored >85% excitement. Streamer webcam reaction spike confirmed.</p>
+</div>
+<!-- Log Item 4 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Step 04 • 00:02:02
+            </span>
+<span class="text-outline">Audio Beat</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Beat-Drop Audio Synchronization</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Aligned 6 sniper knockdown frames to 140BPM sub-bass transient hits in track A2.</p>
+</div>
+<!-- Log Item 5 -->
+<div class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Step 05 • 00:03:10
+            </span>
+<span class="text-tertiary font-bold">98.4% Acc</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Dynamic Kinetic Captioning</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Word-level timestamps synthesized; custom Twitch slang & emotes formatted.</p>
+</div>
+<!-- Log Item 6 (Active / Review) -->
+<div class="p-2 rounded bg-surface-container-high shadow-md">
+<div class="flex items-center justify-between text-[10px] font-code-mono mb-1">
+<span class="text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[13px] animate-spin">sync</span>
+              Reviewing • 00:04:12
+            </span>
+<span class="px-1.5 py-0.2 rounded bg-primary/20 text-primary">Active</span>
+</div>
+<p class="font-headline-md text-[11px] text-on-surface font-semibold">Smart Color Grade & Motion Zoom</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Subtle 1.08x punch-in zooms applied on sniper impact frames for kinetic weight.</p>
+</div>
+</div>
+<!-- Quick AI Tuning Drawer (Bottom Controls) -->
+<div class="p-space-sm bg-surface-container-lowest flex-shrink-0 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface font-semibold">Editing Style</span>
+<span class="font-code-mono text-[10px] text-primary">Action Hybrid</span>
+</div>
+<!-- Style Chips -->
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm hover:text-on-surface" type="button">Chill</button>
+<button class="flex-1 py-1 rounded bg-primary-container text-on-primary-container text-[10px] font-label-sm font-semibold" type="button">Action</button>
+<button class="flex-1 py-1 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm hover:text-on-surface" type="button">Meme</button>
+<button class="flex-1 py-1 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm hover:text-on-surface" type="button">Cinema</button>
+</div>
+<!-- Pacing Slider -->
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-code-mono text-outline">
+<span>Pacing: Rapid Cuts (2.4s avg)</span>
+<span class="text-on-surface">Fast</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full relative cursor-pointer">
+<div class="w-4/5 h-full bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- BGM Ducking Toggle -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-[11px] text-on-surface-variant font-body-sm">Auto-BGM Ducking (-18dB)</span>
+<div class="w-7 h-4 bg-primary rounded-full relative cursor-pointer">
+<div class="w-3 h-3 bg-on-primary rounded-full absolute right-0.5 top-0.5 shadow"></div>
+</div>
+</div>
+<!-- Dual Bottom CTAs -->
+<div class="grid grid-cols-2 gap-1.5 pt-1">
+<button class="py-1.5 px-2 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-sm text-[11px] transition-colors" type="button">
+            Re-generate
+          </button>
+<button class="py-1.5 px-2 rounded bg-primary hover:bg-primary-container text-on-primary font-label-sm text-[11px] font-semibold transition-transform active:scale-95 shadow" type="button">
+            Lock Cuts
+          </button>
+</div>
+</div>
+</aside>
+</div>
+<!-- BOTTOM PANEL: ADVANCED MULTITRACK NLE TIMELINE (~260px) -->
+<section class="h-64 bg-surface-container-low flex flex-col flex-shrink-0 z-20 shadow-2xl relative">
+<!-- Timeline Global Toolbar -->
+<div class="h-8 bg-surface-container-lowest px-margin flex items-center justify-between flex-shrink-0">
+<!-- Track Header Quick Controls -->
+<div class="flex items-center gap-space-sm">
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Lock All Tracks" type="button">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Mute All" type="button">
+<span class="material-symbols-outlined text-[15px]">volume_off</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Solo Audio" type="button">
+<span class="material-symbols-outlined text-[15px]">headphones</span>
+</button>
+<div class="h-3 w-px bg-surface-variant mx-1"></div>
+<div class="flex items-center gap-1 text-[11px] font-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">auto_fix_normal</span>
+<span>Magnet ON</span>
+</div>
+</div>
+<!-- Center Zoom Slider & Scale Bar -->
+<div class="flex items-center gap-2">
+<button class="text-outline hover:text-on-surface text-[14px]" type="button">-</button>
+<div class="w-28 h-1.5 bg-surface-container-highest rounded-full relative cursor-pointer">
+<div class="w-1/2 h-full bg-primary rounded-full"></div>
+</div>
+<button class="text-outline hover:text-on-surface text-[14px]" type="button">+</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-outline hover:text-on-surface text-[10px] font-label-sm" type="button">Fit Window (Shift+Z)</button>
+</div>
+<!-- Right Timecode Markers -->
+<div class="font-code-mono text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="text-tertiary font-bold">FPS 60.00</span>
+<span class="text-surface-variant">•</span>
+<span>00:01:24:18 / 00:02:45:00</span>
+</div>
+</div>
+<!-- Timeline Workspace Split (Track Labels Left vs Canvas Right) -->
+<div class="flex-1 flex overflow-hidden relative">
+<!-- LEFT: Fixed Track Headers / Lanes Identifiers (Width: 100px) -->
+<div class="w-24 bg-surface-container-low flex flex-col flex-shrink-0 z-10 shadow-sm text-[11px] font-label-sm">
+<!-- Ruler spacer -->
+<div class="h-6 bg-surface-container-lowest flex items-center px-2 text-outline text-[10px] font-code-mono">RULER</div>
+<!-- Track V2 Header -->
+<div class="h-10 px-2 bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<span class="font-bold text-secondary">V2 FX</span>
+<div class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">visibility</span>
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">lock_open</span>
+</div>
+</div>
+<!-- Track V1 Header -->
+<div class="h-14 px-2 bg-surface-container flex items-center justify-between text-on-surface font-semibold">
+<span class="text-primary font-bold">V1 CUT</span>
+<div class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">visibility</span>
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">lock_open</span>
+</div>
+</div>
+<!-- Track A1 Audio Header -->
+<div class="h-11 px-2 bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<span class="font-medium text-tertiary">A1 DIA</span>
+<div class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">volume_up</span>
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">lock_open</span>
+</div>
+</div>
+<!-- Track A2 Music Header -->
+<div class="h-11 px-2 bg-surface-container flex items-center justify-between text-on-surface-variant">
+<span class="font-medium text-tertiary">A2 BGM</span>
+<div class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">music_note</span>
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">lock_open</span>
+</div>
+</div>
+<!-- Track A3 SFX Header -->
+<div class="h-10 px-2 bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<span class="font-medium text-on-surface-variant">A3 SFX</span>
+<div class="flex items-center gap-0.5 text-outline">
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">equalizer</span>
+<span class="material-symbols-outlined text-[13px] hover:text-on-surface cursor-pointer">lock_open</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: Horizontal Multitrack Canvas Area -->
+<div class="flex-1 flex flex-col overflow-x-auto relative no-scrollbar bg-surface-container-lowest">
+<!-- Interactive Playhead Indicator Over Tracks (Position: 51%) -->
+<div class="absolute left-[51%] top-0 bottom-0 z-30 pointer-events-none flex flex-col items-center">
+<!-- Playhead Triangular Needle Cap -->
+<div class="w-3.5 h-3.5 bg-primary text-on-primary flex items-center justify-center transform rotate-45 shadow-lg -mt-1 rounded-sm"></div>
+<!-- Glowing Vertical Playhead Ray -->
+<div class="w-0.5 flex-1 bg-primary shadow-[0_0_8px_rgba(208,188,255,0.8)]"></div>
+</div>
+<!-- Timecode Ruler Strip -->
+<div class="h-6 bg-surface-container-lowest font-code-mono text-[9px] text-outline flex items-center relative flex-shrink-0 select-none">
+<span class="absolute left-2">00:00:00</span>
+<span class="absolute left-[18%]">00:00:30</span>
+<span class="absolute left-[36%]">00:01:00</span>
+<span class="absolute left-[51%] text-primary font-bold">00:01:24</span>
+<span class="absolute left-[70%]">00:02:00</span>
+<span class="absolute left-[88%]">00:02:30</span>
+<span class="absolute right-4 text-on-surface-variant">00:02:45</span>
+</div>
+<!-- TRACK V2: Captions, Punch-in Overlays, Graphics (Height: 40px) -->
+<div class="h-10 relative flex items-center px-1 bg-surface-container-lowest/60">
+<!-- Caption Block 1 -->
+<div class="absolute left-[8%] w-[12%] h-7 rounded bg-secondary-container/40 p-1 flex items-center gap-1 shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-[12px]">subtitles</span>
+<span class="font-label-sm text-[10px] text-secondary truncate font-semibold">SUB: "Dropping in"</span>
+</div>
+<!-- Zoom Punch-In Effect Block -->
+<div class="absolute left-[24%] w-[6%] h-7 rounded bg-primary-container/30 p-1 flex items-center gap-1 overflow-hidden">
+<span class="material-symbols-outlined text-primary text-[12px]">zoom_in</span>
+<span class="font-label-sm text-[9px] text-primary truncate">1.1x Punch</span>
+</div>
+<!-- Highlight Subtitle Block Active -->
+<div class="absolute left-[46%] w-[22%] h-7 rounded bg-primary-container/60 p-1 flex items-center justify-between shadow overflow-hidden">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-primary text-[13px]">auto_awesome</span>
+<span class="font-label-sm text-[10px] text-primary font-extrabold truncate">KINETIC: "WAIT DID YOU SEE THAT"</span>
+</div>
+<span class="px-1 py-0.2 rounded bg-primary text-on-primary text-[8px] font-code-mono">AI 98%</span>
+</div>
+<!-- Kill Feed Graphic Overlay Block -->
+<div class="absolute left-[75%] w-[14%] h-7 rounded bg-error-container/40 p-1 flex items-center gap-1 overflow-hidden">
+<span class="material-symbols-outlined text-error text-[12px]">local_fire_department</span>
+<span class="font-label-sm text-[9px] text-on-error-container truncate font-bold">KILL LEADER BANNER</span>
+</div>
+</div>
+<!-- TRACK V1: Main Video Clips (Razor Slices) (Height: 56px) -->
+<div class="h-14 relative flex items-center px-1 bg-surface-container-lowest">
+<!-- Clip 01: Intro Hot Drop (00:00 - 00:18) -->
+<div class="absolute left-0 w-[11%] h-12 rounded bg-surface-container-high overflow-hidden shadow group cursor-pointer">
+<div class="h-1 w-full bg-primary/70"></div>
+<div class="p-1 flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface truncate">01_DropShip</span>
+<span class="font-code-mono text-[8px] text-outline">0:18</span>
+</div>
+<div class="px-1 flex items-center gap-0.5 opacity-60">
+<div class="w-3 h-2 rounded-xs bg-surface-container-highest"></div>
+<div class="w-3 h-2 rounded-xs bg-surface-container-highest"></div>
+</div>
+</div>
+<!-- White AI Cut Marker -->
+<div class="absolute left-[11%] top-0 bottom-0 w-0.5 bg-surface-variant z-10" title="AI Cut: 00:00:18"></div>
+<!-- Clip 02: Loot & Ambush (00:18 - 00:46) -->
+<div class="absolute left-[11.2%] w-[17%] h-12 rounded bg-surface-container-high overflow-hidden shadow group cursor-pointer">
+<div class="h-1 w-full bg-secondary"></div>
+<div class="p-1 flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface truncate">02_LootAmbush</span>
+<span class="font-code-mono text-[8px] text-outline">0:28</span>
+</div>
+<div class="px-1 text-[8px] text-on-surface-variant truncate">Auto-trimmed silence</div>
+</div>
+<!-- Cut Marker -->
+<div class="absolute left-[28.2%] top-0 bottom-0 w-0.5 bg-surface-variant z-10"></div>
+<!-- Clip 03: SELECTED PRIMARY CLUTCH (00:46 - 01:24) -->
+<div class="absolute left-[28.4%] w-[23%] h-12 rounded bg-primary-container/20 overflow-hidden shadow-lg ring-1 ring-primary cursor-pointer">
+<div class="h-1 w-full bg-primary"></div>
+<div class="p-1 flex items-center justify-between">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-primary text-[12px]">star</span>
+<span class="font-label-sm text-[10px] text-on-surface font-extrabold truncate">03_SniperClutch_4K</span>
+</div>
+<span class="px-1 py-0.2 rounded bg-primary text-on-primary font-code-mono text-[8px] font-bold">98% HYPE</span>
+</div>
+<!-- Clip Trim Handles -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary cursor-col-resize"></div>
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-primary cursor-col-resize"></div>
+</div>
+<!-- Cut Marker -->
+<div class="absolute left-[51.4%] top-0 bottom-0 w-0.5 bg-surface-variant z-10"></div>
+<!-- Clip 04: Squad Wipe (01:24 - 02:10) -->
+<div class="absolute left-[51.6%] w-[28%] h-12 rounded bg-surface-container-high overflow-hidden shadow group cursor-pointer">
+<div class="h-1 w-full bg-tertiary"></div>
+<div class="p-1 flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface truncate">04_SquadWipe_Fight</span>
+<span class="font-code-mono text-[8px] text-outline">0:46</span>
+</div>
+<div class="px-1 text-[8px] text-tertiary truncate">• 3 Knockdowns detected</div>
+</div>
+<!-- Cut Marker -->
+<div class="absolute left-[79.6%] top-0 bottom-0 w-0.5 bg-surface-variant z-10"></div>
+<!-- Clip 05: Champion Screen (02:10 - 02:45) -->
+<div class="absolute left-[79.8%] w-[20%] h-12 rounded bg-surface-container-high overflow-hidden shadow group cursor-pointer">
+<div class="h-1 w-full bg-primary-container"></div>
+<div class="p-1 flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface truncate">05_ApexChampion_Victory</span>
+<span class="font-code-mono text-[8px] text-outline">0:35</span>
+</div>
+<div class="px-1 text-[8px] text-on-surface-variant truncate">Ranked Tier UP</div>
+</div>
+</div>
+<!-- TRACK A1: Game Dialogue & Voice Audio (Height: 44px) -->
+<div class="h-11 relative flex items-center px-1 bg-surface-container-lowest/80">
+<div class="w-full h-8 rounded bg-surface-container/60 relative overflow-hidden flex items-center">
+<!-- Simulated Waveform SVG for Voice Track -->
+<svg class="w-full h-6 text-tertiary/70" preserveaspectratio="none" viewbox="0 0 1000 100">
+<path d="M0,50 L20,30 L40,70 L60,20 L80,80 L100,50 L120,40 L140,60 L160,50 L180,50 L200,50 L220,10 L240,90 L260,20 L280,80 L300,50 L320,50 L340,30 L360,70 L380,45 L400,55 L420,50 L440,50 L460,5 L480,95 L500,10 L520,90 L540,5 L560,95 L580,50 L600,50 L620,20 L640,80 L660,30 L680,70 L700,50 L720,50 L740,50 L760,15 L780,85 L800,20 L820,80 L840,50 L860,50 L880,50 L900,40 L920,60 L940,30 L960,70 L980,50 L1000,50" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+<span class="absolute left-2 top-0.5 text-[8px] font-code-mono text-tertiary">A1 Speech (AI Ducked)</span>
+</div>
+</div>
+<!-- TRACK A2: Music Track (Cyan Beat-Synced Waveform) (Height: 44px) -->
+<div class="h-11 relative flex items-center px-1 bg-surface-container-lowest">
+<div class="w-full h-8 rounded bg-tertiary-container/15 relative overflow-hidden flex items-center">
+<!-- Rich Continuous Beat Waveform -->
+<svg class="w-full h-7 text-tertiary" preserveaspectratio="none" viewbox="0 0 1000 100">
+<path d="M0,50 Q25,10 50,50 T100,50 T150,15 T200,50 T250,50 T300,5 T350,95 T400,5 T450,95 T500,50 T550,5 T600,95 T650,5 T700,95 T750,50 T800,5 T850,95 T900,50 T950,20 T1000,50" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+</svg>
+<!-- Beat Transient Dots -->
+<div class="absolute left-[30%] w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<div class="absolute left-[40%] w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<div class="absolute left-[51.4%] w-2 h-2 rounded-full bg-primary ring-2 ring-primary animate-ping"></div>
+<div class="absolute left-[65%] w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<div class="absolute left-[85%] w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<span class="absolute left-2 top-0.5 text-[8px] font-code-mono text-tertiary font-bold">Cyber_Bass_Drift • 140BPM Transient Locks</span>
+</div>
+</div>
+<!-- TRACK A3: Short Impact SFX (Emerald Blocks) (Height: 40px) -->
+<div class="h-10 relative flex items-center px-1 bg-surface-container-lowest/60">
+<!-- SFX 1 Whoosh -->
+<div class="absolute left-[10.5%] w-[3%] h-6 rounded bg-secondary-container/50 px-1 flex items-center overflow-hidden">
+<span class="font-code-mono text-[8px] text-secondary truncate">Whoosh</span>
+</div>
+<!-- SFX 2 Hitmarker -->
+<div class="absolute left-[38%] w-[2.5%] h-6 rounded bg-secondary-container px-1 flex items-center overflow-hidden shadow">
+<span class="font-code-mono text-[8px] text-on-secondary-container truncate font-bold">Hit_01</span>
+</div>
+<!-- SFX 3 Sub Bass Drop (Clutch moment) -->
+<div class="absolute left-[51%] w-[6%] h-6 rounded bg-primary-container px-1 flex items-center gap-1 overflow-hidden shadow">
+<span class="material-symbols-outlined text-[10px] text-on-primary-container">bolt</span>
+<span class="font-code-mono text-[8px] text-on-primary-container font-extrabold truncate">SUB_DROP</span>
+</div>
+<!-- SFX 4 Victory Horn -->
+<div class="absolute left-[80%] w-[5%] h-6 rounded bg-secondary-container/50 px-1 flex items-center overflow-hidden">
+<span class="font-code-mono text-[8px] text-secondary truncate">Horn_Stinger</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Workspace Micro-interactions -->
+<script>
+    (function() {
+      // Toggle Play/Pause button states
+      const playBtn = document.getElementById('playPauseBtn');
+      if (playBtn) {
+        let isPlaying = true;
+        playBtn.addEventListener('click', function() {
+          isPlaying = !isPlaying;
+          const icon = playBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.textContent = isPlaying ? 'pause' : 'play_arrow';
+          }
+          playBtn.classList.toggle('ring-2', isPlaying);
+          playBtn.classList.toggle('ring-primary', isPlaying);
+        });
+      }
+
+      // Micro-interaction for AI Snip Tool
+      const aiSnip = document.getElementById('aiSnipBtn');
+      if (aiSnip) {
+        aiSnip.addEventListener('click', function() {
+          aiSnip.classList.toggle('bg-primary');
+          aiSnip.classList.toggle('text-on-primary');
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,11 @@
+{
+  "name": "luna",
+  "private": true,
+  "packageManager": "pnpm@12.11.2",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:api": "cd apps/api && python -m uvicorn main:app --reload --port 8000",
+    "build": "pnpm --filter web build",
+    "lint": "pnpm --filter web lint"
+  }
+}

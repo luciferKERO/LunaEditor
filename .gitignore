@@ -1,0 +1,16 @@
+node_modules/
+.next/
+dist/
+__pycache__/
+*.pyc
+.env
+.env.local
+uploads/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+!assets/bgm/**/*.mp3
+.codegraph/
+agency-agents/
