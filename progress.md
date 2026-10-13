@@ -43,6 +43,8 @@ Record distinct errors with timestamps, attempt numbers, and resolutions so fail
 |-----------|-------|---------|------------|
 | 2026-10-13 | App loading forever | 1 | Missing .env, no postgres. Created .env, switched to SQLite, installed deps |
 | 2026-10-13 | /projects 404 | 1 | Created projects/page.tsx |
+| 2026-10-13 | Embedded git repo warning | 1 | Removed apps/web/.git, committed web app to main repo |
+| 2026-10-13 | Deployment prep complete | 1 | New README, DEPLOY.md guide, pushed to GitHub |
 
 ## 5-Question Reboot Check
 
