@@ -52,11 +52,11 @@ Complete this table when resuming work to confirm the current phase, destination
 
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase X |
-| Where am I going? | Remaining phases |
-| What's the goal? | [goal statement] |
-| What have I learned? | See findings.md |
-| What have I done? | See above |
+| Where am I? | Deployment phase — ready to ship to production |
+| Where am I going? | Vercel (frontend) + Railway (backend) live |
+| What's the goal? | LUNA fully deployed & accessible online |
+| What have I learned? | Monorepo deploy (pnpm workspaces), SQLite → PostgreSQL migration, Vercel/Railway setup |
+| What have I done? | Fixed /projects, created .env, beautiful README, detailed deployment guide (ID + EN), pushed to GitHub |
 
 ---
 
